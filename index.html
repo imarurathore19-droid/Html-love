@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shrabani ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff4b7d,#ff9a9e);
+font-family:Arial,sans-serif;
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,.95);
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:420px;
+text-align:center;
+box-shadow:0 0 25px rgba(0,0,0,.3);
+animation:zoom 1s;
+}
+
+h1{
+color:#ff0066;
+margin-bottom:15px;
+}
+
+#typing{
+font-size:20px;
+font-weight:bold;
+color:#444;
+min-height:60px;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff0066;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#love{
+display:none;
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+color:#444;
+}
+
+.heart{
+position:absolute;
+color:red;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-10vh);
+opacity:1;
+}
+}
+
+@keyframes zoom{
+from{
+transform:scale(.5);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>❤️ Dear Shrabani ❤️</h1>
+
+<div id="typing"></div>
+
+<button onclick="openLove()">Open My Heart 💖</button>
+
+<div id="love">
+
+<p>
+🌹 Shrabani,<br><br>
+
+Jab se tum meri zindagi me aayi ho,
+har din ek nayi khushi lekar aata hai. ❤️<br><br>
+
+Tum meri muskaan ho,
+meri dua ho,
+aur meri duniya ka sabse khoobsurat hissa ho. 💕<br><br>
+
+Main har roz sirf ek hi dua karta hoon...
+ki tum hamesha meri zindagi me yun hi muskurati raho. 🌹<br><br>
+
+❤️ <b>I Love You So Much Shrabani ❤️</b><br><br>
+
+Forever Yours 💍❤️
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+let text="A small surprise made only for you... ❤️";
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,70);
+}
+}
+type();
+
+function openLove(){
+document.getElementById("love").style.display="block";
+}
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},250);
+
+</script>
+
+</body>
+</html>
